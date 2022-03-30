@@ -1,13 +1,18 @@
 from typing import Any, Dict
 
+from hexbytes import (
+    HexBytes,
+)
+
 from .crypto import keccak
+import binascii
 
 
 def collapse_if_tuple(abi: Dict[str, Any]) -> str:
     """
     Converts a tuple from a dict to a parenthesized list of its types.
 
-    >>> from eth_utils.abi import collapse_if_tuple
+    >>> from platon_utils.abi import collapse_if_tuple
     >>> collapse_if_tuple(
     ...     {
     ...         'components': [
@@ -60,6 +65,14 @@ def event_signature_to_log_topic(event_signature: str) -> bytes:
     return keccak(text=event_signature.replace(" ", ""))
 
 
-def event_abi_to_log_topic(event_abi: Dict[str, Any]) -> bytes:
-    event_signature = _abi_to_signature(event_abi)
-    return event_signature_to_log_topic(event_signature)
+def event_abi_to_log_topic(event_abi: Dict[str, Any], vm_type: str) -> bytes:
+    if vm_type == 'wasm':
+        event_name = event_abi['name']
+        hex_bytes_name  = binascii.hexlify(event_name.encode('utf-8'))
+        if len(event_name) <= 32:
+            return HexBytes(hex_bytes_name.decode('utf-8').rjust(64, '0'))
+        else:
+            return keccak_256(hex_bytes_name)
+    else:
+        event_name = _abi_to_signature(event_abi)
+        return event_signature_to_log_topic(event_name)
