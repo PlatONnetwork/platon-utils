@@ -1,6 +1,6 @@
 import pytest
 
-from eth_utils.numeric import clamp
+from platon_utils.numeric import clamp
 
 
 @pytest.mark.parametrize(

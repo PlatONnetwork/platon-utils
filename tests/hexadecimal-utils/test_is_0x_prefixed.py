@@ -1,6 +1,6 @@
 import pytest
 
-from eth_utils.hexadecimal import is_0x_prefixed
+from platon_utils.hexadecimal import is_0x_prefixed
 
 
 @pytest.mark.parametrize(

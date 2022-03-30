@@ -1,1 +1,1 @@
-eth-utils[doc]
+platon-utils[doc]

@@ -29,7 +29,7 @@ def combine_argument_formatters(*formatters: List[Callable[..., Any]]) -> Format
         DeprecationWarning(
             "combine_argument_formatters(formatter1, formatter2)([item1, item2])"
             "has been deprecated and will be removed in a subsequent major version "
-            "release of the eth-utils library. Update your calls to use "
+            "release of the platon-utils library. Update your calls to use "
             "apply_formatters_to_sequence([formatter1, formatter2], [item1, item2]) "
             "instead."
         )

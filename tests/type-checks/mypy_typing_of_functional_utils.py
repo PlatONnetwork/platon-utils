@@ -1,7 +1,7 @@
 import decimal
 from typing import TYPE_CHECKING, Dict, Iterable, List, NoReturn, Set, Tuple
 
-from eth_utils import (
+from platon_utils import (
     clamp,
     denoms,
     replace_exceptions,
@@ -66,7 +66,7 @@ def typing_to_ordered_dict() -> Iterable[Tuple[str, int]]:
 v_ordered_dict: "OrderedDict[str, int]" = typing_to_ordered_dict()
 
 # verifies that the denoms object is properly typed.
-ether: int = denoms.ether
+lat: int = denoms.lat
 
 
 @replace_exceptions({ValueError: TypeError})

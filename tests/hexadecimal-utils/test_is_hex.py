@@ -1,6 +1,6 @@
 import pytest
 
-from eth_utils import is_hex
+from platon_utils import is_hex
 
 
 @pytest.mark.parametrize(

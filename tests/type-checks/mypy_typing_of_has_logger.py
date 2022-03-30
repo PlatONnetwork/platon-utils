@@ -1,7 +1,7 @@
 import logging
 from typing import Generic, GenericMeta, TypeVar
 
-from eth_utils import (
+from platon_utils import (
     ExtendedDebugLogger,
     HasExtendedDebugLogger,
     HasLogger,

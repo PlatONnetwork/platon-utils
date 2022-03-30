@@ -1,6 +1,6 @@
 from typing import TypeVar
 
-from eth_typing import (  # noqa: F401
+from platon_typing import (  # noqa: F401
     Address,
     AnyAddress,
     ChecksumAddress,

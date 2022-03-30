@@ -1,6 +1,6 @@
 import pytest
 
-from eth_utils.types import (
+from platon_utils.types import (
     is_boolean,
     is_dict,
     is_integer,

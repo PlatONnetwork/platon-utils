@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Ethereum Utilities documentation build configuration file, created by
+# PlatON Utilities documentation build configuration file, created by
 # sphinx-quickstart on Thu Oct 16 20:43:24 2014.
 #
 # This file is execfile()d with the current directory set to its
@@ -53,8 +53,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'Ethereum Utilities'
-copyright = '2020, The Ethereum Foundation'
+project = 'PlatON Utilities'
+copyright = '2020, The PlatON Foundation'
 
 __version__ = setup_version
 # The version info for the project you're documenting, acts as replacement for
@@ -189,7 +189,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'eth_utilsdoc'
+htmlhelp_basename = 'platon_utilsdoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -209,8 +209,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'eth_utils.tex', 'Ethereum Utilities Documentation',
-   'The Ethereum Foundation', 'manual'),
+  ('index', 'platon_utils.tex', 'PlatON Utilities Documentation',
+   'The PlatON Foundation', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -239,8 +239,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'eth_utils', 'Ethereum Utilities Documentation',
-     ['The Ethereum Foundation'], 1)
+    ('index', 'platon_utils', 'PlatON Utilities Documentation',
+     ['The PlatON Foundation'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -253,8 +253,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'Ethereum Utilities', 'Ethereum Utilities Documentation',
-   'The Ethereum Foundation', 'Ethereum Utilities', 'Common utility functions for python code that interacts with Ethereum',
+  ('index', 'PlatON Utilities', 'PlatON Utilities Documentation',
+   'The PlatON Foundation', 'PlatON Utilities', 'Common utility functions for python code that interacts with PlatON',
    'Miscellaneous'),
 ]
 

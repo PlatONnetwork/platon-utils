@@ -1,2 +1,2 @@
 def test_import():
-    import eth_utils  # noqa: F401
+    import platon_utils  # noqa: F401

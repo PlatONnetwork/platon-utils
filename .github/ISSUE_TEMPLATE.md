@@ -27,7 +27,7 @@ EXPECTED_RESULT
 
 ```sh
 # run this:
-$ python -m eth_utils
+$ python -m platon_utils
 
 # then copy the output here:
 OUTPUT_HERE

@@ -1,6 +1,6 @@
 from typing import Union
 
-from eth_hash.auto import keccak as keccak_256
+from platon_hash.auto import keccak as keccak_256
 
 from .conversions import to_bytes
 

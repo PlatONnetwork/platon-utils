@@ -2,24 +2,24 @@ Overview
 ==============
 
 Join the chat at
-`https://gitter.im/ethereum/eth-utils <https://gitter.im/ethereum/eth-utils>`__
+`https://gitter.im/platon/platon-utils <https://gitter.im/platon/platon-utils>`__
 
-`Build Status <https://circleci.com/gh/ethereum/eth-utils>`__
+`Build Status <https://circleci.com/gh/platon/platon-utils>`__
 
-Common utility functions for codebases which interact with ethereum.
+Common utility functions for codebases which interact with platon.
 
 -  This library and repository was previously located at
-   https://github.com/pipermerriam/ethereum-utils. It was transferred to
-   the Ethereum foundation github in November 2017 and renamed to
-   ``eth-utils``. The PyPi package was also renamed from
-   ``ethereum-utils`` to \`eth-utils\`.
+   https://github.com/pipermerriam/platon-utils. It was transferred to
+   the PlatON foundation github in November 2017 and renamed to
+   ``platon-utils``. The PyPi package was also renamed from
+   ``platon-utils`` to \`platon-utils\`.
 
 Installation
 ------------
 
 .. code:: sh
 
-   pip install eth-utils
+   pip install platon-utils
 
 Development
 -----------
@@ -28,7 +28,7 @@ Clone the repository and then run:
 
 .. code:: sh
 
-   pip install -e .[dev] eth-hash[pycryptodome]
+   pip install -e .[dev] platon-hash[pycryptodome]
 
 Documentation
 -------------

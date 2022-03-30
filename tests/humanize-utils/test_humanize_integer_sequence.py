@@ -1,6 +1,6 @@
 import pytest
 
-from eth_utils import humanize_integer_sequence
+from platon_utils import humanize_integer_sequence
 
 
 @pytest.mark.parametrize(

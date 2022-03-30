@@ -1,7 +1,7 @@
-eth-utils
+platon-utils
 =====================================
 
-Common utility functions for python code that interacts with Ethereum
+Common utility functions for python code that interacts with PlatON
 
 Contents
 --------
@@ -11,7 +11,7 @@ Contents
 
    overview
    utilities
-   Low-Level APIs <eth_utils>
+   Low-Level APIs <platon_utils>
    release_notes
 
 

@@ -1,6 +1,6 @@
 from typing import List
 
-from eth_utils.curried import (  # noqa: F401
+from platon_utils.curried import (  # noqa: F401
     ExtendedDebugLogger,
     HasExtendedDebugLogger,
     HasExtendedDebugLoggerMeta,
@@ -26,7 +26,7 @@ from eth_utils.curried import (  # noqa: F401
     event_abi_to_log_topic,
     event_signature_to_log_topic,
     flatten_return,
-    from_wei,
+    from_von,
     function_abi_to_4byte_selector,
     function_signature_to_4byte_selector,
     get_extended_debug_logger,
@@ -80,7 +80,7 @@ from eth_utils.curried import (  # noqa: F401
     to_set,
     to_text,
     to_tuple,
-    to_wei,
+    to_von,
 )
 
 

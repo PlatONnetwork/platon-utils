@@ -1,6 +1,6 @@
 import pytest
 
-from eth_utils import replace_exceptions
+from platon_utils import replace_exceptions
 
 
 @pytest.fixture()

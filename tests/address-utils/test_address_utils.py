@@ -1,6 +1,6 @@
 import pytest
 
-from eth_utils.address import (
+from platon_utils.address import (
     is_address,
     is_binary_address,
     is_canonical_address,
@@ -18,7 +18,7 @@ from eth_utils.address import (
 @pytest.mark.parametrize(
     "args,is_any,is_hexstr,is_binary",
     (
-        # weird values
+        # vonrd values
         (lambda: None, False, False, False),
         ({}, False, False, False),
         ("function", False, False, False),

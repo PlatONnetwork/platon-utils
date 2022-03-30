@@ -17,10 +17,12 @@ from .address import (  # noqa: F401
     is_checksum_formatted_address,
     is_hex_address,
     is_normalized_address,
+    is_bech32_address,
     is_same_address,
     to_canonical_address,
     to_checksum_address,
     to_normalized_address,
+    to_bech32_address,
 )
 from .applicators import (  # noqa: F401
     apply_formatter_at_index,
@@ -41,7 +43,7 @@ from .conversions import (  # noqa: F401
     to_text,
 )
 from .crypto import keccak  # noqa: F401
-from .currency import denoms, from_wei, to_wei  # noqa: F401
+from .currency import denoms, from_von, to_von  # noqa: F401
 from .decorators import combomethod, replace_exceptions  # noqa: F401
 from .encoding import big_endian_to_int, int_to_big_endian  # noqa: F401
 from .exceptions import ValidationError  # noqa: F401
@@ -103,10 +105,10 @@ if sys.version_info.major < 3:
     warnings.simplefilter("always", DeprecationWarning)
     warnings.warn(
         DeprecationWarning(
-            "The `eth-utils` library has dropped support for Python 2. Upgrade to Python 3."
+            "The `platon-utils` library has dropped support for Python 2. Upgrade to Python 3."
         )
     )
     warnings.resetwarnings()
 
 
-__version__ = pkg_resources.get_distribution("eth-utils").version
+__version__ = pkg_resources.get_distribution("platon-utils").version

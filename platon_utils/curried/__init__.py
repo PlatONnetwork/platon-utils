@@ -1,5 +1,5 @@
 # flake8: noqa
-from eth_utils import (
+from platon_utils import (
     ExtendedDebugLogger,
     HasExtendedDebugLogger,
     HasExtendedDebugLoggerMeta,
@@ -25,7 +25,7 @@ from eth_utils import (
     event_abi_to_log_topic,
     event_signature_to_log_topic,
     flatten_return,
-    from_wei,
+    from_von,
     function_abi_to_4byte_selector,
     function_signature_to_4byte_selector,
     get_extended_debug_logger,
@@ -45,6 +45,7 @@ from eth_utils import (
     is_bytes,
     is_canonical_address,
     is_checksum_address,
+    is_bech32_address,
     is_checksum_formatted_address,
     is_dict,
     is_hex,
@@ -70,6 +71,7 @@ from eth_utils import (
     to_bytes,
     to_canonical_address,
     to_checksum_address,
+    to_bech32_address,
     to_dict,
     to_hex,
     to_int,
@@ -79,9 +81,9 @@ from eth_utils import (
     to_set,
     to_text,
     to_tuple,
-    to_wei,
+    to_von,
 )
-from eth_utils.toolz import curry
+from platon_utils.toolz import curry
 from typing import (
     Any,
     Callable,
@@ -233,18 +235,18 @@ apply_formatters_to_dict = curry(non_curried_apply_formatters_to_dict)
 apply_formatters_to_sequence = curry(apply_formatters_to_sequence)
 apply_key_map = curry(apply_key_map)
 apply_one_of_formatters = curry(non_curried_apply_one_of_formatters)
-from_wei = curry(from_wei)
+from_von = curry(from_von)
 get_logger = curry(get_logger)
 hexstr_if_str = curry(non_curried_hexstr_if_str)
 is_same_address = curry(is_same_address)
 text_if_str = curry(non_curried_text_if_str)
-to_wei = curry(to_wei)
+to_von = curry(to_von)
 clamp = curry(clamp)
 
 # Delete any methods and classes that are not intended to be importable from
-#   eth_utils.curried
+#   platon_utils.curried
 # We do this approach instead of __all__ because this approach actually prevents
-#   importing the wrong thing, while __all__ only affects `from eth_utils.curried import *`
+#   importing the wrong thing, while __all__ only affects `from platon_utils.curried import *`
 del Any
 del Callable
 del Dict

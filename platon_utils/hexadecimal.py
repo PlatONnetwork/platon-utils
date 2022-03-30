@@ -4,7 +4,7 @@ import binascii
 import re
 from typing import Any, AnyStr
 
-from eth_typing import HexStr
+from platon_typing import HexStr
 
 from .types import is_string, is_text
 

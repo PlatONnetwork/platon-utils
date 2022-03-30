@@ -1,6 +1,6 @@
 from typing import Callable, TypeVar, Union
 
-from eth_typing import HexStr, Primitives
+from platon_typing import HexStr, Primitives
 
 from .decorators import validate_conversion_arguments
 from .encoding import big_endian_to_int, int_to_big_endian
@@ -23,7 +23,7 @@ def to_hex(
     """
     Auto converts any supported value into its hex representation.
     Trims leading zeros, as defined in:
-    https://github.com/ethereum/wiki/wiki/JSON-RPC#hex-value-encoding
+    https://github.com/platon/wiki/wiki/JSON-RPC#hex-value-encoding
     """
     if hexstr is not None:
         return add_0x_prefix(HexStr(hexstr.lower()))
@@ -87,6 +87,7 @@ def to_int(
 def to_bytes(
     primitive: Primitives = None, hexstr: HexStr = None, text: str = None
 ) -> bytes:
+    from .address import is_address, to_canonical_address
     if is_boolean(primitive):
         return b"\x01" if primitive else b"\x00"
     elif isinstance(primitive, bytearray):
@@ -95,6 +96,8 @@ def to_bytes(
         return primitive
     elif is_integer(primitive):
         return to_bytes(hexstr=to_hex(primitive))
+    elif is_address(primitive):
+        return to_canonical_address(primitive)
     elif hexstr is not None:
         if len(hexstr) % 2:
             # type check ignored here because casting an Optional arg to str is not possible

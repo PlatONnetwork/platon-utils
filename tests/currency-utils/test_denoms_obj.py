@@ -1,5 +1,5 @@
-from eth_utils import denoms
-from eth_utils.units import units
+from platon_utils import denoms
+from platon_utils.units import units
 
 
 def test_all_units_are_on_denoms_object():

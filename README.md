@@ -1,26 +1,26 @@
-# Ethereum Utilities
+# PlatON Utilities
 
-[![Join the chat at https://gitter.im/ethereum/eth-utils](https://badges.gitter.im/ethereum/eth-utils.svg)](https://gitter.im/ethereum/eth-utils?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Build Status](https://circleci.com/gh/ethereum/eth-utils.svg?style=shield)](https://circleci.com/gh/ethereum/eth-utils)
-[![PyPI version](https://badge.fury.io/py/eth-utils.svg)](https://badge.fury.io/py/eth-utils)
-[![Python versions](https://img.shields.io/pypi/pyversions/eth-utils.svg)](https://pypi.python.org/pypi/eth-utils)
-[![Docs build](https://readthedocs.org/projects/eth-utils/badge/?version=latest)](http://eth-utils.readthedocs.io/en/latest/?badge=latest)
+[![Join the chat at https://gitter.im/platon/platon-utils](https://badges.gitter.im/platon/platon-utils.svg)](https://gitter.im/platon/platon-utils?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://circleci.com/gh/platon/platon-utils.svg?style=shield)](https://circleci.com/gh/platon/platon-utils)
+[![PyPI version](https://badge.fury.io/py/platon-utils.svg)](https://badge.fury.io/py/platon-utils)
+[![Python versions](https://img.shields.io/pypi/pyversions/platon-utils.svg)](https://pypi.python.org/pypi/platon-utils)
+[![Docs build](https://readthedocs.org/projects/platon-utils/badge/?version=latest)](http://platon-utils.readthedocs.io/en/latest/?badge=latest)
    
 
-Common utility functions for python code that interacts with Ethereum
+Common utility functions for python code that interacts with PlatON
 
-Read more in the [documentation on ReadTheDocs](https://eth-utils.readthedocs.io/). [View the change log](https://eth-utils.readthedocs.io/en/latest/release_notes.html).
+Read more in the [documentation on ReadTheDocs](https://platon-utils.readthedocs.io/). [View the change log](https://platon-utils.readthedocs.io/en/latest/release_notes.html).
 
 ## Quickstart
 
 ```sh
-pip install eth-utils
+pip install platon-utils
 ```
 
 ## Developer Setup
 
-If you would like to hack on eth-utils, please check out the [Snake Charmers
-Tactical Manual](https://github.com/ethereum/snake-charmers-tactical-manual)
+If you would like to hack on platon-utils, please check out the [Snake Charmers
+Tactical Manual](https://github.com/platon/snake-charmers-tactical-manual)
 for information on how we do:
 
 - Testing
@@ -33,12 +33,12 @@ for information on how we do:
 You can set up your dev environment with:
 
 ```sh
-git clone git@github.com:ethereum/eth-utils.git
-cd eth-utils
+git clone git@github.com:platon/platon-utils.git
+cd platon-utils
 virtualenv -p python3 venv
 . venv/bin/activate
 pip install -e .[dev]
-pip install -e eth-hash[pycryptodome]
+pip install -e platon-hash[pycryptodome]
 ```
 
 ### Testing Setup
@@ -49,7 +49,7 @@ Show flake8 errors on file change:
 
 ```sh
 # Test flake8
-when-changed -v -s -r -1 eth_utils/ tests/ -c "clear; flake8 eth_utils tests && echo 'flake8 success' || echo 'error'"
+when-changed -v -s -r -1 platon_utils/ tests/ -c "clear; flake8 platon_utils tests && echo 'flake8 success' || echo 'error'"
 ```
 
 Run multi-process tests in one command, but without color:
@@ -65,7 +65,7 @@ Run in one thread, with color and desktop notifications:
 
 ```sh
 cd venv
-ptw --onfail "notify-send -t 5000 'Test failure ⚠⚠⚠⚠⚠' 'python 3 test on eth-utils failed'" ../tests ../eth_utils
+ptw --onfail "notify-send -t 5000 'Test failure' 'python 3 test on platon-utils failed'" ../tests ../platon_utils
 ```
 
 ### Release setup

@@ -1,12 +1,13 @@
 from typing import Any, Union, cast
 
-from eth_typing import Address, AnyAddress, ChecksumAddress, HexAddress, HexStr
+from platon_typing import Address, AnyAddress, ChecksumAddress, HexAddress, HexStr, Bech32Address
 
-from .conversions import hexstr_if_str, to_hex
+from .bech32 import bech32_decode, bech32_encode
+from .conversions import hexstr_if_str, to_hex, to_bytes
 from .crypto import keccak
 from .hexadecimal import add_0x_prefix, decode_hex, encode_hex, remove_0x_prefix
 import re
-from .types import is_bytes, is_text
+from .types import is_bytes, is_text, is_string
 
 _HEX_ADDRESS_REGEXP = re.compile("(0x)?[0-9a-f]{40}", re.IGNORECASE | re.ASCII)
 
@@ -40,10 +41,10 @@ def is_address(value: Any) -> bool:
         if _is_checksum_formatted(value):
             return is_checksum_address(value)
         return True
-
+    if is_bech32_address(value):
+        return True
     if is_binary_address(value):
         return True
-
     return False
 
 
@@ -51,6 +52,10 @@ def to_normalized_address(value: Union[AnyAddress, str, bytes]) -> HexAddress:
     """
     Converts an address to its normalized hexadecimal representation.
     """
+    if is_bech32_address(value):
+        hrp, data = bech32_decode(value)
+        if hrp and data:
+            value = bytes(data).hex()
     try:
         hex_address = hexstr_if_str(to_hex, value).lower()
     except AttributeError:
@@ -61,13 +66,13 @@ def to_normalized_address(value: Union[AnyAddress, str, bytes]) -> HexAddress:
         return HexAddress(HexStr(hex_address))
     else:
         raise ValueError(
-            "Unknown format {}, attempted to normalize to {}".format(value, hex_address)
+            "Unknown format {}, please confirm that the address is correct".format(value)
         )
 
 
 def is_normalized_address(value: Any) -> bool:
     """
-    Returns whether the provided value is an address in its normalized form.
+    Returns whlat the provided value is an address in its normalized form.
     """
     if not is_address(value):
         return False
@@ -146,3 +151,30 @@ def _is_checksum_formatted(value: Any) -> bool:
 
 def is_checksum_formatted_address(value: Any) -> bool:
     return is_hex_address(value) and _is_checksum_formatted(value)
+
+
+def is_bech32_address(value: Any) -> bool:
+    """
+    Checks if the given string is an bech32 address.
+    """
+    if not is_text(value) or len(value) != 42 or is_hex_address(value):
+        return False
+    hrp, address = bech32_decode(value)
+    if hrp and address:
+        return True
+
+
+def to_bech32_address(value: Union[AnyAddress, str, bytes], hrp: str = None) -> Bech32Address:
+    """
+    Converts a address to its bech32 representation.
+    """
+    if not hrp:
+        if is_bech32_address(value):
+            return value
+        else:
+            raise ValueError(
+                "When translated the address to the bech32 address, HRP is required".format(value)
+            )
+    norm_address = to_normalized_address(value)
+    witprog = list(bytes.fromhex(remove_0x_prefix(norm_address)))
+    return Bech32Address(bech32_encode(witprog, hrp))

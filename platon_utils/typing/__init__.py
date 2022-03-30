@@ -11,8 +11,8 @@ from .misc import (  # noqa: F401
 )
 
 warnings.warn(
-    "The eth_utils.typing module will be deprecated in favor "
-    "of eth-typing in the next major version bump.",
+    "The platon_utils.typing module will be deprecated in favor "
+    "of platon-typing in the next major version bump.",
     category=DeprecationWarning,
     stacklevel=2,
 )

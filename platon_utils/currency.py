@@ -7,38 +7,38 @@ from .units import units
 
 
 class denoms:
-    wei = int(units["wei"])
-    kwei = int(units["kwei"])
-    babbage = int(units["babbage"])
-    femtoether = int(units["femtoether"])
-    mwei = int(units["mwei"])
-    lovelace = int(units["lovelace"])
-    picoether = int(units["picoether"])
-    gwei = int(units["gwei"])
-    shannon = int(units["shannon"])
-    nanoether = int(units["nanoether"])
-    nano = int(units["nano"])
-    szabo = int(units["szabo"])
-    microether = int(units["microether"])
-    micro = int(units["micro"])
-    finney = int(units["finney"])
-    milliether = int(units["milliether"])
-    milli = int(units["milli"])
-    ether = int(units["ether"])
-    kether = int(units["kether"])
-    grand = int(units["grand"])
-    mether = int(units["mether"])
-    gether = int(units["gether"])
-    tether = int(units["tether"])
+    von = int(units["von"])
+    kvon = int(units["kvon"])
+    kvon = int(units["kvon"])
+    kvon = int(units["kvon"])
+    mvon = int(units["mvon"])
+    mvon = int(units["mvon"])
+    mvon = int(units["mvon"])
+    gvon = int(units["gvon"])
+    gvon = int(units["gvon"])
+    gvon = int(units["gvon"])
+    gvon = int(units["gvon"])
+    microlat = int(units["microlat"])
+    microlat = int(units["microlat"])
+    microlat = int(units["microlat"])
+    millilat = int(units["millilat"])
+    millilat = int(units["millilat"])
+    millilat = int(units["millilat"])
+    lat = int(units["lat"])
+    klat = int(units["klat"])
+    klat = int(units["klat"])
+    mlat = int(units["mlat"])
+    glat = int(units["glat"])
+    tlat = int(units["tlat"])
 
 
-MIN_WEI = 0
-MAX_WEI = 2 ** 256 - 1
+MIN_VON = 0
+MAX_VON = 2 ** 256 - 1
 
 
-def from_wei(number: int, unit: str) -> Union[int, decimal.Decimal]:
+def from_von(number: int, unit: str) -> Union[int, decimal.Decimal]:
     """
-    Takes a number of wei and converts it to any other ether unit.
+    Takes a number of von and converts it to any other lat unit.
     """
     if unit.lower() not in units:
         raise ValueError(
@@ -48,7 +48,7 @@ def from_wei(number: int, unit: str) -> Union[int, decimal.Decimal]:
     if number == 0:
         return 0
 
-    if number < MIN_WEI or number > MAX_WEI:
+    if number < MIN_VON or number > MAX_VON:
         raise ValueError("value must be between 1 and 2**256 - 1")
 
     unit_value = units[unit.lower()]
@@ -61,9 +61,9 @@ def from_wei(number: int, unit: str) -> Union[int, decimal.Decimal]:
     return result_value
 
 
-def to_wei(number: Union[int, float, str, decimal.Decimal], unit: str) -> int:
+def to_von(number: Union[int, float, str, decimal.Decimal], unit: str) -> int:
     """
-    Takes a number of a unit and converts it to wei.
+    Takes a number of a unit and converts it to von.
     """
     if unit.lower() not in units:
         raise ValueError(
@@ -96,7 +96,7 @@ def to_wei(number: Union[int, float, str, decimal.Decimal], unit: str) -> int:
         ctx.prec = 999
         result_value = decimal.Decimal(value=d_number, context=ctx) * unit_value
 
-    if result_value < MIN_WEI or result_value > MAX_WEI:
-        raise ValueError("Resulting wei value must be between 1 and 2**256 - 1")
+    if result_value < MIN_VON or result_value > MAX_VON:
+        raise ValueError("Resulting von value must be between 1 and 2**256 - 1")
 
     return int(result_value)

@@ -30,7 +30,7 @@ lint:
 	tox -elint
 
 lint-roll:
-	black eth_utils tests
+	black platon_utils tests
 	$(MAKE) lint
 
 test:

@@ -47,32 +47,32 @@ with open('./README.md') as readme:
 
 
 setup(
-    name='eth-utils',
+    name='platon-utils',
     # *IMPORTANT*: Don't manually change the version here. Use `make bump`, as described in readme
     version='1.10.0',
     description=(
-        """eth-utils: Common utility functions for python code that interacts with Ethereum"""
+        """platon-utils: Common utility functions for python code that interacts with PlatON"""
     ),
     long_description=long_description,
     long_description_content_type='text/markdown',
-    author='The Ethereum Foundation',
-    author_email='snakecharmers@ethereum.org',
-    url='https://github.com/ethereum/eth-utils',
+    author='Shinnng',
+    author_email='shinnng@outlook.com',
+    url='https://github.com/platon/platon-utils',
     include_package_data=True,
     install_requires=[
-        "eth-hash>=0.3.1,<0.4.0",
-        "eth-typing>=2.2.1,<3.0.0",
+        "platon-hash>=0.3.1,<0.4.0",
+        "platon-typing>=2.2.1,<3.0.0",
         "toolz>0.8.2,<1;implementation_name=='pypy'",
         "cytoolz>=0.10.1,<1.0.0;implementation_name=='cpython'",
     ],
     python_requires='>=3.5,!=3.5.2,<4',
     extras_require=extras_require,
-    py_modules=['eth_utils'],
+    py_modules=['platon_utils'],
     license="MIT",
     zip_safe=False,
-    keywords='ethereum',
+    keywords='platon',
     packages=find_packages(exclude=["tests", "tests.*"]),
-    package_data={'eth_utils': ['py.typed']},
+    package_data={'platon_utils': ['py.typed']},
     classifiers=[
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
